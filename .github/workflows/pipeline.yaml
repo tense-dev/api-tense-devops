@@ -115,7 +115,7 @@ jobs:
       - name: Update repository
         working-directory: ${{ needs.build.outputs.path_repo }}
         run: |-
-          git config --global user.name "tensedev"
+          git config --global user.name "tensedevxxx"
           git config --global user.email "tensedev@gmail.com"
           git add .
           git commit -am "release: ${{ env.IMAGE_NAME }} env: ${{ needs.build.outputs.env }} version: ${{ needs.build.outputs.image_tag }}"
