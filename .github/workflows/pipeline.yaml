@@ -110,6 +110,7 @@ jobs:
             if [ "$ENV" = "${{ needs.build.outputs.env }}" ]; then
               yq e -i '.API.tag = dev' $file
             fi
+          yq e -i '.API.tag = dev' $file
           done
       
       - name: Update repository
