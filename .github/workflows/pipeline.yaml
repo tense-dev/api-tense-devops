@@ -17,14 +17,14 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to Harbor
-        run: echo "Aa112233" | docker login harbor.analytichpxv3.online -u tensedev --password-stdin
+        run: echo "Aa112233" | docker login habor.analytichpxv3.online/tensedev-api -u tensedev --password-stdin
 
       - name: Build and Tag Docker Image
         run: |
-          docker build -t harbor.analytichpxv3.online/tensedev-api/tensedev-api:latest .
-          docker tag harbor.analytichpxv3.online/tensedev-api/tensedev-api:latest harbor.analytichpxv3.online/tensedev-api/tensedev-api:${{ github.sha }}
+          docker build -t habor.analytichpxv3.online/tensedev-api:latest .
+          docker tag habor.analytichpxv3.online/tensedev-api:latest habor.analytichpxv3.online/tensedev-api:${{ github.sha }}
 
       - name: Push Docker Image to Harbor
         run: |
-          docker push harbor.analytichpxv3.online/tensedev-api/tensedev-api:latest
-          docker push harbor.analytichpxv3.online/tensedev-api/tensedev-api:${{ github.sha }}
+          docker push habor.analytichpxv3.online/tensedev-api:latest
+          docker push habor.analytichpxv3.online/tensedev-api:${{ github.sha }}
