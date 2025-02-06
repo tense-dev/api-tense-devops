@@ -11,7 +11,7 @@ on:
       - v*
 
 env:
-  IMAGE_NAME: tense-ui
+  IMAGE_NAME: api-tense
 
 jobs:
   build:
