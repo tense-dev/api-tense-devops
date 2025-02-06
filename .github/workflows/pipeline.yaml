@@ -108,9 +108,9 @@ jobs:
           for file in $(find ./k8s/helm-values -type f -name '*.yaml'); do
             ENV=$(yq e '.ENV' $file)
             if [ "$ENV" = "${{ needs.build.outputs.env }}" ]; then
-              yq e -i '.API.tag = dev' $file
+              yq e -i 'API.tag = strenv('dev')' $file
             fi
-          yq e -i '.API.tag = dev' $file
+                yq e -i 'API.tag = strenv('dev')' $file
           done
       
       - name: Update repository
