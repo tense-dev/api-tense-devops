@@ -35,6 +35,7 @@ func validateAPIKey() gin.HandlerFunc {
 
 func main() {
 	fmt.Println("version", os.Getenv("VERSION"))
+	fmt.Println("สวัสดี ชาวโลก")
 	r := gin.Default()
 
 	r.Use(cors.Default())
