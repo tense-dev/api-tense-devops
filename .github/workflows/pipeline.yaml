@@ -110,7 +110,7 @@ jobs:
             if [ "$ENV" = "${{ needs.build.outputs.env }}" ]; then
               yq e -i 'API.tag = strenv('dev')' $file
             fi
-                yq e -i 'API.tag = strenv('dev')' $file
+                yq e -i 'API.tag = 1' $file
           done
       
       - name: Update repository
